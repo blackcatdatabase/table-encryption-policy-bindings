@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  encryption_policy_bindings_current
 -- Current policy per (entity, field)
@@ -20,7 +20,7 @@ FROM (
 ) ranked
 WHERE rn = 1;
 
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  encryption_policy_bindings
 -- Contract view for [encryption_policy_bindings]
