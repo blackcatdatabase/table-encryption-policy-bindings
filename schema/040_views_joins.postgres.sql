@@ -1,0 +1,11 @@
+-- Auto-generated from joins-postgres.psd1 (map@mtime:2025-11-27T17:17:38Z)
+-- engine: postgres
+-- view:   encryption_policy_bindings_current
+
+-- Current policy per (entity, field)
+CREATE OR REPLACE VIEW vw_encryption_policy_bindings_current AS
+SELECT DISTINCT ON (entity_table, field_name)
+  entity_table, field_name, policy_id, effective_from
+FROM encryption_policy_bindings
+WHERE effective_from <= now()
+ORDER BY entity_table, field_name, effective_from DESC;
