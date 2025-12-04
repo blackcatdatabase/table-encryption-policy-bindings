@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-mysql.yaml (map@94ebe6c)
+-- Auto-generated from schema-views-mysql.yaml (map@4ae85c5)
 -- engine: mysql
 -- table:  encryption_policy_bindings
 
@@ -10,5 +10,7 @@ SELECT
   field_name,
   policy_id,
   effective_from,
-  notes
+  notes,
+  created_at,
+  updated_at
 FROM encryption_policy_bindings;

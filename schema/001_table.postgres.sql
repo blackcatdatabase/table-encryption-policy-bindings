@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.yaml (map@94ebe6c)
+-- Auto-generated from schema-map-postgres.yaml (map@4ae85c5)
 -- engine: postgres
 -- table:  encryption_policy_bindings
 
@@ -9,5 +9,7 @@ CREATE TABLE IF NOT EXISTS encryption_policy_bindings (
   policy_id    BIGINT NOT NULL,
   effective_from TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   notes TEXT NULL,
+  created_at TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  updated_at TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   CONSTRAINT uq_enc_policy_bind UNIQUE (entity_table, field_name, effective_from)
 );

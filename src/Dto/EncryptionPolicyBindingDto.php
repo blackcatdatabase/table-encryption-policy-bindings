@@ -15,7 +15,9 @@ final class EncryptionPolicyBindingDto implements \JsonSerializable {
         public readonly string $fieldName,
         public readonly int $policyId,
         public readonly \DateTimeImmutable $effectiveFrom,
-        public readonly ?string $notes
+        public readonly ?string $notes,
+        public readonly \DateTimeImmutable $createdAt,
+        public readonly \DateTimeImmutable $updatedAt
     ) {}
 
     /** Suitable for serialization/logging (without large blobs). */

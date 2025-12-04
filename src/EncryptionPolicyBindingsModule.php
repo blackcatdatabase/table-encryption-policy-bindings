@@ -41,14 +41,16 @@ SELECT
   field_name,
   policy_id,
   effective_from,
-  notes
+  notes,
+  created_at,
+  updated_at
 FROM encryption_policy_bindings;
 SQL;
         } else {
             $createViewSql = <<<'SQL'
 CREATE OR REPLACE VIEW vw_encryption_policy_bindings AS
 SELECT
-  id, entity_table, field_name, policy_id, effective_from, notes
+  id, entity_table, field_name, policy_id, effective_from, notes, created_at, updated_at
 FROM encryption_policy_bindings;
 SQL;
         }
