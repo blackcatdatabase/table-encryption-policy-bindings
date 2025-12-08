@@ -5,12 +5,12 @@ History of which encryption policy applies to a field.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| effective_from | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy becomes active. |
+| effective_from | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy becomes active. |
 | entity_table | VARCHAR(64) | NO |  | Table name. |
-| field_name |  | NO |  | Column that the policy covers. |
+| field_name | VARCHAR(64) | NO |  | Column that the policy covers. |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | notes | TEXT | YES |  | Documentation / rollout notes. |
-| policy_id |  | NO |  | Policy identifier (FK encryption_policies.id). |
+| policy_id | BIGINT | NO |  | Policy identifier (FK encryption_policies.id). |
 
 ## Engine Details
 
@@ -55,7 +55,7 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_encryption_policy_bindings | mysql | algorithm=MERGE, security=INVOKER | [packages\encryption-policy-bindings\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/encryption-policy-bindings/schema/040_views.mysql.sql) |
-| vw_encryption_policy_bindings_current | mysql | algorithm=MERGE, security=INVOKER | [packages\encryption-policy-bindings\schema\040_views_joins.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/encryption-policy-bindings/schema/040_views_joins.mysql.sql) |
-| vw_encryption_policy_bindings | postgres |  | [packages\encryption-policy-bindings\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/encryption-policy-bindings/schema/040_views.postgres.sql) |
-| vw_encryption_policy_bindings_current | postgres |  | [packages\encryption-policy-bindings\schema\040_views_joins.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/encryption-policy-bindings/schema/040_views_joins.postgres.sql) |
+| vw_encryption_policy_bindings | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_encryption_policy_bindings_current | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views_joins.mysql.sql](schema\040_views_joins.mysql.sql) |
+| vw_encryption_policy_bindings | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_encryption_policy_bindings_current | postgres |  | [schema\040_views_joins.postgres.sql](schema\040_views_joins.postgres.sql) |
