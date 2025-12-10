@@ -5,12 +5,12 @@ History of which encryption policy applies to a field.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| effective_from | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy becomes active. |
-| entity_table | VARCHAR(64) | NO |  | Table name. |
 | field_name | VARCHAR(64) | NO |  | Column that the policy covers. |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| notes | TEXT | YES |  | Documentation / rollout notes. |
+| effective_from | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy becomes active. |
 | policy_id | BIGINT | NO |  | Policy identifier (FK encryption_policies.id). |
+| id | BIGINT | NO |  | Surrogate primary key. |
+| entity_table | VARCHAR(64) | NO |  | Table name. |
+| notes | TEXT | YES |  | Documentation / rollout notes. |
 
 ## Engine Details
 
