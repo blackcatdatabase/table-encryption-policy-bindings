@@ -5,7 +5,7 @@ History of which encryption policy applies to a field.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| effective_from | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy becomes active. |
+| effective_from | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy becomes active. |
 | entity_table | VARCHAR(64) | NO |  | Table name. |
 | field_name | VARCHAR(64) | NO |  | Column that the policy covers. |
 | id | BIGINT | NO |  | Surrogate primary key. |
