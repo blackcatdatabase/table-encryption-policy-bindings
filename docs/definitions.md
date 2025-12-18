@@ -3,14 +3,16 @@
 History of which encryption policy applies to a field.
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| entity_table | VARCHAR(64) | NO |  | Table name. |
-| field_name | VARCHAR(64) | NO |  | Column that the policy covers. |
-| policy_id | BIGINT | NO |  | Policy identifier (FK encryption_policies.id). |
-| effective_from | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy becomes active. |
-| notes | TEXT | YES |  | Documentation / rollout notes. |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| entity_table | VARCHAR(64) | NO |  | Table name. |  |
+| field_name | mysql: VARCHAR(64) | NO |  | Column that the policy covers. |  |
+| policy_id | mysql: BIGINT | NO |  | Policy identifier (FK encryption_policies.id). |  |
+| effective_from | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy becomes active. |  |
+| notes | TEXT | YES |  | Documentation / rollout notes. |  |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
+| updated_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |  |
 
 ## Engine Details
 
